@@ -1,7 +1,7 @@
 local tArgs = { ... }
 local url = "https://raw.github.com/Human-"
 local repo = "CCNet"
-local branch = "blob/master"
+local branch = "master"
 local function printUsage()
    print("Usage: "..shell.getRunningProgram().." <file> <save to>") 
 end
