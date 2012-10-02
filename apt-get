@@ -1,12 +1,12 @@
 local tArgs = { ... }
-local url = "https://raw.github.com/Human-/"
+local url = "https://raw.github.com/Human-"
 local repo = "CCNet"
-local branch = "master"
+local branch = "blob/master"
 local function printUsage()
    print("Usage: "..shell.getRunningProgram().." <file> <save to>") 
 end
-function pkg(url, file)
-    h = http.get(url.."/"..repo.."/"..branch)
+function pkg(dl, file)
+    h = http.get(url.."/"..repo.."/"..branch..dl)
     if h then
        f = fs.open(file, "w")
       f.write(h.readAll())
@@ -16,7 +16,7 @@ function pkg(url, file)
       print("Download failed!")
     end
 end
-if tArgs == 3 then
+if #tArgs == 2 then
    pkg(tArgs[1], tArgs[2]) 
 else
    printUsage()
